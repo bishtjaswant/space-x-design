@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,300&display=swap');
+
+@import "./utility.css";
+@import "./variables.css";
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--pure);
+    background-color: var(--primary);
+    height: 4000px;
+}
+
+
+header {
+  background-size: cover;
+  background-image:linear-gradient(135deg,rgba(0,0,0,1),rgba(0,0,0,0.2)), url(../imgaes/sunrise.jpg);
+  min-height: 100vh;
+}
+
+
+header .nav-right .links {
+      display: flex;
+      
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  padding: 10px 10px 5px 25px;
+
+  border-bottom: 2px solid var(--gray);
+}
+
+header .nav-right .links li {
+  padding: 0 12px;
+  list-style: none;
+}
+
+header .nav-right .links li a{
+  text-decoration: none;
+  color: var(--pure);
+  text-transform: capitalize;
+  font-style:1.4rem;
+  cursor: pointer;
+  position: relative;
+}
+header .nav-right .links li a::after{
+  content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--pure);
+    top: 36px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transition: width .3s ease-in-out;
+}
+header .nav-right li a.active{
+  width: 50%;
+}
+header .nav-right .links li a:hover::after{
+  width:50% ;
+}
+header .nav-right{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .search {
+  background: var(--dark);
+    width: 195px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+nav .search form {
+  margin-left: 5px;
+}
+nav .search input{
+  outline: navajowhite;
+    border: none;
+    background-color: var(--gray);
+    color: var(--pure);
+}
+
+nav .search input::placeholder{
+  font-size: 1.3rem;
+}
+
+
+
+.cta .social >div{
+  border: 1px solid var(--pure);
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 22px;
+    transition: color .3s ease-in-out;
+}
+
+
+.cta{
+  position: relative;
+}
+
+.cta .social {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid var(--gray);
+    min-height: 90vh;
+ }
+
+
+@keyframes linkMove{
+  from{
+    transform: translateX(-100px);
+  }
+  to{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+
+.cta .social i {
+  color: var(--mild);
+}
+
+
+.cta .social div:hover .social i{
+  color: var(--primary);
+}
+
+.cta .social div:hover{
+
+  background-color: var(--mild);
+
+}
+
+.cta .right-box{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: calc(100vh - 80px);
+}
+
+.cta .right-box .astronaut img{
+  height: 55vh;
+  position: absolute;
+   top: 12px;
+  right: 175px;
+  object-fit: cover;
+  animation: space 13s ease-in-out infinite alternate;
+}
+
+@keyframes space{
+  50%{
+    transform: translateY(120px) rotate(-75deg) scale(0.9);
+  }
+}
+
+.cta .right-box h1{
+  font-size: 38px;
+    text-transform: capitalize;
+    margin-bottom: 2px;
+    letter-spacing: 2px;
+}
+
+.cta .right-box >  div{
+  flex: 1;
+}
+
+
+
+
+
+.strip {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+ text-transform: uppercase;
+ 
+ height: 75px;
+  background-color: var(--gray);
+}
+
+
+section.rocket{
+ display: grid;
+ grid-template-columns: 1fr 100px 1fr;
+ padding: 100px 0;
+}
+
+.rocket .rocket-body span{
+font-size: 0;
+}
+
+.rocket .rocket-body span img{
+  width: 100%;
+}
+
+
+
+.rocket .left-block .block, .right-block  .block{
+  width: 92%;
+  height: 200px;
+   
+    margin: 18px 0;
+
+
+}
+.rocket p{
+  padding: 12px;
+  line-height: 1.6;
+}
+.rocket h1{
+  margin-top: 12px;
+}
+
+.rocket .left-block button{
+  margin: 22px 0;
+}
+
+.rocket .with-underline{
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.rocket .with-underline::before{
+  content: "";
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    width: 45%;
+    height: 2px;
+    background-color: var(--pure);
+}
+
+.rocket .right-block img {
+  width: 250px;
+    height: 365px;
+    object-fit: contain;
+  }
+ .left-block .first-stage {
+    margin: 74px 0;
+  }
+
+  .block .capacity{
+    margin-top: 124px;
+  }
+
+  .block h6{
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+
+  .block .composite{
+    margin: 116px 0;
+  }
